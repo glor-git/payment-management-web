@@ -1,0 +1,9 @@
+@import "src/static/mixin";
+
+.title-box {
+  @include flex(row, center, center);
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px 0;
+  background: #d5d5d5;
+}
