@@ -1,0 +1,11 @@
+@import "src/static/mixin";
+
+.button-wrapper {
+  position: absolute;
+  bottom: 0;
+  @include flex(row, center, center);
+  width: 100%;
+  border-top: 1px solid black;
+  padding: 20px 0;
+  background: #d5d5d5;
+}
