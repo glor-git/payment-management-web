@@ -16,6 +16,54 @@ export default function CardList() {
       imageUrl: '',
       cardName: '우리카드',
       cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '3',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '4',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '5',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '6',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '7',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '8',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '9',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
+    },
+    {
+      id: '10',
+      imageUrl: '',
+      cardName: '우리카드',
+      cardNumber: '11231 112 12345 552'
     }
   ];
 
