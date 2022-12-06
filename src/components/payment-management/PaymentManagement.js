@@ -1,9 +1,15 @@
 import React from 'react';
+import './PaymentManagement.scss';
+import TitleBox from "../TitleBox";
+import CardList from "./CardList";
+import Button from "../Button";
 
-function PaymentManagement(props) {
+export default function PaymentManagement() {
   return (
-    <div></div>
+    <div className={'payment-management-wrapper'}>
+      <TitleBox titleText={'결제 수단 관리'} />
+      <CardList />
+      <Button buttonText={'+ 결제수단 등록'} />
+    </div>
   );
 }
-
-export default PaymentManagement;
