@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CompleteText.scss';
+import styles from './CompleteText.module.scss';
 
 CompleteText.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.element
 };
 
-function CompleteText({ title, subTitle }) {
+export default function CompleteText({ title, subTitle }) {
   return (
-    <div className={'complete-text-wrapper'}>
-      <div className={'title'}>{title}</div>
-      <div className={'sub-title'}> {subTitle}</div>
+    <div className={styles.completeTextWrapper}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.subTitle}> {subTitle}</div>
     </div>
   );
 }
-
-export default CompleteText;

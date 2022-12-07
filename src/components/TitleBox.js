@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import './TitleBox.scss';
+import styles from './TitleBox.module.scss';
 
 TitleBox.propTypes = {
   titleText: PropTypes.string.isRequired,
@@ -8,6 +8,6 @@ TitleBox.propTypes = {
 
 export default function TitleBox({ titleText }) {
   return (
-    <div className={'title-box'}>{titleText}</div>
+    <div className={styles.titleBox}>{titleText}</div>
   );
 }

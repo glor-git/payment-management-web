@@ -1,16 +1,16 @@
 @import "src/static/mixin";
 
-.complete-text-wrapper {
+.completeTextWrapper {
   @include flex(column, center, center);
   gap: 20px;
   width: 100%;
 
-  > .title {
+  .title {
     font-size: 20px;
     font-weight: bold;
   }
 
-  > .sub-title {
+  .subTitle {
     text-align: center;
     line-height: 20px;
   }

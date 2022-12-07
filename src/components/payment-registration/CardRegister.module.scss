@@ -1,15 +1,15 @@
 @import "src/static/mixin";
 
-.card-register-wrapper {
+.cardRegisterWrapper {
   @include flex(column, flex-start, flex-start);
   gap: 20px;
   width: 100%;
   padding: 20px 10px;
   border: 1px solid black;
 
-  .card-number-wrapper,
-  .card-date-wrapper,
-  .card-password-wrapper {
+  .cardNumberWrapper,
+  .cardDateWrapper,
+  .cardPasswordWrapper {
     @include flex(row, flex-start, flex-start);
     gap: 20px;
     width: 100%;

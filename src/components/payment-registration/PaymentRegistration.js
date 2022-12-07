@@ -1,5 +1,5 @@
 import React from 'react';
-import './PaymentRegistration.scss';
+import styles from './PaymentRegistration.module.scss';
 import TitleBox from "../TitleBox";
 import Button from "../Button";
 import CardRegister from "./CardRegister";
@@ -7,7 +7,7 @@ import Keypad from "./Keypad";
 
 function PaymentRegistration() {
   return (
-    <div className={'payment-registration-wrapper'}>
+    <div className={styles.paymentRegistrationWrapper}>
       <TitleBox titleText={'결제 수단 등록'} />
       <CardRegister />
       <Keypad />

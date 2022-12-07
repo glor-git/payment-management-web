@@ -1,5 +1,5 @@
 import React from 'react';
-import './CardList.scss';
+import styles from './CardList.module.scss';
 import Card from "./Card";
 
 export default function CardList() {
@@ -68,7 +68,7 @@ export default function CardList() {
   ];
 
   return (
-    <div className={'card-list-wrapper'}>
+    <div className={styles.cardListWrapper}>
       {listData.map(({ id, imageUrl, cardName, cardNumber }) => {
         return (
           <React.Fragment key={id}>

@@ -1,7 +1,7 @@
 import React from 'react';
-import './CompleteCard.scss';
+import styles from './CompleteCard.module.scss';
 
-export default  function CompleteCard() {
+export default function CompleteCard() {
   const data = {
     id: '1',
     imageUrl: '',
@@ -10,13 +10,13 @@ export default  function CompleteCard() {
     cardType: '신한체크카드'
   }
   return (
-    <div className={'complete-card'}>
-      <div className={'card-wrapper2'}>
-        <div className={'image-wrapper'} />
-        <div className={'card-name'}>신한카드</div>
+    <div className={styles.completeCard}>
+      <div className={styles.cardWrapper}>
+        <div className={styles.imageWrapper} />
+        <div className={styles.cardName}>신한카드</div>
       </div>
 
-        <ul className={'card-info-wrapper'}>
+        <ul className={styles.cardInfoWrapper}>
           <li>{data.cardType}</li>
           <li>{data.cardNumber}</li>
         </ul>

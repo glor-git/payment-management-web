@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Keypad.scss';
+import styles from './Keypad.module.scss';
 import { shuffle } from "../../util/array";
 
 export default function Keypad() {
@@ -10,13 +10,13 @@ export default function Keypad() {
   }, [])
 
   return (
-    <div className={'keypad-wrapper'}>
+    <div className={styles.keypadWrapper}>
       {padArr.map(number => {
         return (
-          <div className={'key'}>{number}</div>
+          <div className={styles.key}>{number}</div>
         )
       })}
-      <div className={'key'}>x</div>
+      <div className={styles.key}>x</div>
     </div>
   );
 }

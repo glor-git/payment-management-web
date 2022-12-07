@@ -1,6 +1,6 @@
 @import "src/static/mixin";
 
-.complete-card {
+.completeCard {
   @include flex(column, flex-start, flex-start);
   gap: 40px;
   width: 100%;
@@ -8,24 +8,24 @@
   border: 1px solid black;
   border-radius: 10px;
 
-  .card-wrapper2 {
+  .cardWrapper {
     position: relative;
     @include flex(row, flex-start, center);
     gap: 5px;
 
-    .image-wrapper {
+    .imageWrapper {
       width: 25px;
       height: 25px;
       background: red;
     }
 
-    .card-name {
+    .cardName {
       font-size: 20px;
       font-weight: bold;
     }
   }
 
-  .card-info-wrapper {
+  .cardInfoWrapper {
     line-height: 20px;
   }
 }

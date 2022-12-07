@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import './Button.scss';
+import styles from './Button.module.scss';
 
 Button.propTypes = {
   buttonText: PropTypes.string.isRequired,
 };
 
-function Button({ buttonText }) {
+export default function Button({ buttonText }) {
   return (
-    <div className={'button-wrapper'}>{buttonText}</div>
+    <div className={styles.buttonWrapper}>{buttonText}</div>
   );
 }
-
-export default Button;

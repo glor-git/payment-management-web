@@ -1,6 +1,6 @@
 @import "src/static/mixin";
 
-.button-wrapper {
+.buttonWrapper {
   position: absolute;
   bottom: 0;
   @include flex(row, center, center);

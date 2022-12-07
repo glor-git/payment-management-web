@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import './Card.scss';
+import styles from './Card.module.scss';
 
 Card.propTypes = {
   imageUrl: PropTypes.string,
@@ -10,13 +10,13 @@ Card.propTypes = {
 
 export default function Card({ imageUrl, cardName, cardNumber }) {
   return (
-    <div className={'card-wrapper'}>
-      <div className={'image-wrapper'} />
-      <ul className={'card-info-wrapper'}>
+    <div className={styles.cardWrapper}>
+      <div className={styles.imageWrapper} />
+      <ul className={styles.cardInfoWrapper}>
         <li>{cardName}</li>
         <li>{cardNumber}</li>
       </ul>
-      <div className={'delete-icon-wrapper'}>삭제</div>
+      <div className={styles.deleteIconWrapper}>삭제</div>
     </div>
   );
 }

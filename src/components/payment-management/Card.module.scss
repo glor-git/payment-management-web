@@ -1,6 +1,6 @@
 @import "src/static/mixin";
 
-.card-wrapper {
+.cardWrapper {
   position: relative;
   @include flex(row, flex-start, center);
   gap: 5px;
@@ -9,19 +9,19 @@
   padding: 10px 10px;
   border: 1px solid black;
 
-  .image-wrapper {
+  .imageWrapper {
     width: 54px;
     height: 54px;
     background: red;
   }
 
-  .card-info-wrapper {
+  .cardInfoWrapper {
     @include flex(column, flex-start, flex-start);
     gap: 10px;
     height: 100%;
   }
 
-  .delete-icon-wrapper {
+  .deleteIconWrapper {
     position: absolute;
     right: 10px;
   }
