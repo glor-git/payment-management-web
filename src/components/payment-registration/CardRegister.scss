@@ -1,0 +1,30 @@
+@import "src/static/mixin";
+
+.card-register-wrapper {
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  width: 100%;
+  padding: 20px 10px;
+  border: 1px solid black;
+
+  .card-number-wrapper,
+  .card-date-wrapper,
+  .card-password-wrapper {
+    @include flex(row, flex-start, flex-start);
+    gap: 20px;
+    width: 100%;
+
+    > .title {}
+
+    > .content {
+      @include flex(row, flex-start, flex-start);
+      gap: 10px;
+      flex: 1;
+
+      > input {
+        width: 100%;
+      }
+
+    }
+  }
+}
