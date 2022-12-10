@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+### 프로젝트 빌드 방법
+1. yarn or yarn install
+2. yarn start
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 구현
+1. 보안키패드 개발
+   - 보안 인풋 창 선택 시 키패드가 렌더되고 해제시 사라지게 구현하기 위해 onFocus와 onBlur 사용
+   - 랜덤 키패드 기능 개발을 위해 0-9까지의 어레이를 랜덤으로 섞어 렌더링 하는 방법을 채택
+2. 인풋 입력값 * 마스킹
+   - 해당 기능 구현을 위해 input type password를 활용'
+3. 데이터 저장 및 삭제를 위해 로컬 스토리지 사용
+   - 로컬스토리지는 string 값을 저장하기 때문에 JSON을 스트링으로 변환하고 사용할 떄는 반대로 스트링을 JSON로 변환해야함
+4. 실제 등록된 카드만 등록할 수 있도록 구현
+   - src/static/database.js 파일에 있는 카드만 저장할 수 있도록 구현헀다.
+   - 카드 등록 시 결과, 저장성공 || 중복카드 || 없는카드
 
-## Available Scripts
+### 실행방법
+1. localhost:3000/management에서 카드 등록선택
+2. 카드 정보 입력 후 등록
+3. 카드등록 페이지에서 완료 선택
+4. management 페이지에서 리스트, 삭제 등 기능 확인
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### URL
+- /management: 카드리스트 확인 및 삭제, 결제수단 등록 클릭 시 '/registration'으로 이동
+- /registration: 카드 등록 기능, 카드 등록 시 결과는 저장성공 || 중복카드 || 없는카드 중 하나 발생 저장 성공시 '/complete'로 이동
+- /complete: 등록완료 페이지, 확인 버튼 클릭시 '/management'로 이동
