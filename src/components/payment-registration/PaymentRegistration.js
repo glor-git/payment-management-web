@@ -23,38 +23,54 @@ export default function PaymentRegistration() {
 
   function findCard() {
     const { cardNumber, cardDate, cardPassword } = getUserCardData();
+    let isReduplication = false;
     let isCard = false;
     let card = {}
 
+    // 중복된 카드 등록
+    if (JSON.parse(localStorage.getItem('cardData'))) {
+      JSON.parse(localStorage.getItem('cardData')).forEach(cardData => {
+        if (cardData.cardNumber === cardNumber && cardData.cardDate === cardDate && cardData.cardPassword === cardPassword) isReduplication = true;
+        return true;
+      })
+
+      if (isReduplication) {
+        alert('이미 등록된 카드입니다.');
+        return false;
+      }
+    }
+
     cardListData.forEach(cardData => {
       if (cardData.cardNumber === cardNumber && cardData.cardDate === cardDate && cardData.cardPassword === cardPassword) {
-        isCard = true;
         card = {
           cardId: cardData.cardId,
-          cardImage: cardData.cardImage,
           cardName: cardData.cardName,
           cardNumber: cardData.cardNumber,
           cardDate: cardData.cardDate,
           cardPassword: cardData.cardPassword
         }
-        return true
+        isCard = true;
+        return false
       }
     })
 
-    return { isCard, card }
+    if (!isCard) {
+      alert('카드 정보를 찾을 수 없습니다.');
+      return false;
+    }
+
+    return card
   }
 
   function setData() {
-    if (findCard().isCard) {
-      if (localStorage.getItem('cardData')) localStorage.setItem('cardData', JSON.stringify([...JSON.parse(localStorage.getItem('cardData')), findCard().card]));
-      else localStorage.setItem('cardData', JSON.stringify([findCard().card]));
-      alert('등록되었습니다.');
+    if (findCard()) {
+      if (localStorage.getItem('cardData')) localStorage.setItem('cardData', JSON.stringify([...JSON.parse(localStorage.getItem('cardData')), findCard()]));
+      else localStorage.setItem('cardData', JSON.stringify([findCard()]));
+      localStorage.setItem('wjqrms', 'true');
       navigate('/complete');
-    } else {
-      alert('카드 정보를 찾을 수 없습니다.');
     }
   }
-  // console.log(JSON.parse(localStorage.getItem('cardData')));
+
   return (
     <div className={styles.paymentRegistrationWrapper}>
       <TitleBox titleText={'결제 수단 등록'} />
