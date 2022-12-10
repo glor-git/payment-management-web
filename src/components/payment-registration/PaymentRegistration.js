@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './PaymentRegistration.module.scss';
 import TitleBox from "../TitleBox";
 import Button from "../Button";
 import CardRegister from "./CardRegister";
 
-function PaymentRegistration() {
+export default function PaymentRegistration() {
 
   function getUserCardData() {
     const cardNumbers = document.getElementsByName('cardNumber');
@@ -20,7 +20,18 @@ function PaymentRegistration() {
 
   function setData() {
     const { cardNumber, cardDate, cardPassword } = getUserCardData();
+    const cardData = {
+      cardNumber,
+      cardDate,
+      cardPassword
+    }
+    if (localStorage.getItem('cardData')) localStorage.setItem('cardData', JSON.stringify([...JSON.parse(localStorage.getItem('cardData')), cardData]));
+    else localStorage.setItem('cardData', JSON.stringify([cardData]));
   }
+
+  useEffect(() => {
+    console.log(JSON.parse(localStorage.getItem('cardData')));
+  }, [])
 
 
   return (
@@ -31,5 +42,3 @@ function PaymentRegistration() {
     </div>
   );
 }
-
-export default PaymentRegistration;
