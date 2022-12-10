@@ -11,7 +11,7 @@ export default function CompleteText({ title, subTitle }) {
   return (
     <div className={styles.completeTextWrapper}>
       <div className={styles.title}>{title}</div>
-      <div className={styles.subTitle}> {subTitle}</div>
+      <div className={styles.subTitle}>{subTitle}</div>
     </div>
   );
 }

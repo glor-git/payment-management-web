@@ -13,12 +13,6 @@
     @include flex(row, flex-start, center);
     gap: 5px;
 
-    .imageWrapper {
-      width: 25px;
-      height: 25px;
-      background: red;
-    }
-
     .cardName {
       font-size: 20px;
       font-weight: bold;

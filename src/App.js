@@ -5,7 +5,7 @@ import PaymentRegistration from "./components/payment-registration/PaymentRegist
 import RegistrationComplete from "./components/registration-complete/RegistrationComplete";
 import './App.scss';
 
-function App() {
+export default function App() {
   return (
     <div className={'App'}>
       <BrowserRouter>
@@ -17,7 +17,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+
   );
 }
-
-export default App;
