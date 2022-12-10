@@ -1,78 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './CardList.module.scss';
 import Card from "./Card";
 
 export default function CardList() {
+  const [cardList, setCardList] = useState(JSON.parse(localStorage.getItem('cardData')) ? JSON.parse(localStorage.getItem('cardData')) : []);
 
-  const listData = [
-    {
-      id: '1',
-      imageUrl: '',
-      cardName: '신한카드',
-      cardNumber: '1234 11231 112 12345'
-    },
-    {
-      id: '2',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '3',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '4',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '5',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '6',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '7',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '8',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '9',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    },
-    {
-      id: '10',
-      imageUrl: '',
-      cardName: '우리카드',
-      cardNumber: '11231 112 12345 552'
-    }
-  ];
+  function deleteCard(index) {
+    const newCardList = [...cardList];
+    newCardList.splice(index, 1);
+    setCardList(newCardList)
+    localStorage.setItem('cardData', JSON.stringify(newCardList));
+    alert('카드정보가 삭제 되었습니다.')
+  }
 
   return (
     <div className={styles.cardListWrapper}>
-      {listData.map(({ id, imageUrl, cardName, cardNumber }) => {
+      {cardList.map(({ cardId, cardName, cardNumber }, index) => {
+
         return (
-          <React.Fragment key={id}>
-            <Card imageUrl={imageUrl} cardName={cardName} cardNumber={cardNumber} />
+          <React.Fragment key={cardId}>
+            <Card deleteCard={() => deleteCard(index)} cardName={cardName} cardNumber={cardNumber} />
           </React.Fragment>
         )
       })}

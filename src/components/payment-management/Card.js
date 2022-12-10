@@ -3,20 +3,21 @@ import PropTypes from "prop-types";
 import styles from './Card.module.scss';
 
 Card.propTypes = {
-  imageUrl: PropTypes.string,
+  deleteCard: PropTypes.func.isRequired,
   cardName: PropTypes.string.isRequired,
   cardNumber: PropTypes.string.isRequired
 };
 
-export default function Card({ imageUrl, cardName, cardNumber }) {
+export default function Card({ deleteCard, cardName, cardNumber }) {
+
+
   return (
     <div className={styles.cardWrapper}>
-      <div className={styles.imageWrapper} />
       <ul className={styles.cardInfoWrapper}>
         <li>{cardName}</li>
-        <li>{cardNumber}</li>
+        <li>{`${cardNumber.substr(0,4)} ${cardNumber.substr(4, 2)}** **** ${cardNumber.substr(12, 3)}*`}</li>
       </ul>
-      <div className={styles.deleteIconWrapper}>삭제</div>
+      <div className={styles.deleteIconWrapper} onClick={deleteCard}>삭제</div>
     </div>
   );
 }
